@@ -1,9 +1,12 @@
 import './App.css';
 import HeaderComponent from './components/Header/HeaderComponent';
+import { BrowserRouter } from 'react-router-dom';
 
 function App() {
   return (
-    <HeaderComponent/>
+    <BrowserRouter>
+      <HeaderComponent/>
+    </BrowserRouter>
   );
 }
 

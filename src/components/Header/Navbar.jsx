@@ -1,23 +1,25 @@
 import React from 'react';
-import { AppBar, makeStyles, Toolbar, Typography, } from '@mui/material';
+import { AppBar, Toolbar, Typography, Box, Hidden, IconButton } from '@mui/material';
+import MenuIcon from '@mui/icons-material/Menu';
+import { useStyles } from './HeaderStyles';
 
-const useStyles = makeStyles((theme) => ({
-	logo:{
-		color: "red",
-	}
-}))
 
-export default function Navbar() {
+export default function Navbar({ handleDrawerOpen }) {
 	const classes = useStyles();
   return (
 	<AppBar position="static">
-  <Toolbar variant="dense">
-    <Typography variant="h6" className={classes.logo}>
-      Photos
+  <Toolbar>
+    <Typography variant="h6" className={classes.logo} color="inherit" component="div">
+      CometLabs
     </Typography>
-	{/*<IconButton edge="start" className={classes.menuButton} color="inherit" aria-label="menu">
-      <MenuIcon />
-  </IconButton>*/}
+	<Hidden smDown>
+	<Box ></Box>
+	</Hidden>
+	<Hidden mdUP>
+	<IconButton color="inherit" onClick={handleDrawerOpen}>
+		<MenuIcon />
+	</IconButton>
+	</Hidden>
   </Toolbar>
 </AppBar>
   )
