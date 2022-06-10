@@ -1,5 +1,5 @@
 import { Drawer, Hidden } from '@mui/material';
-import React, { useState } from 'react';
+import React from 'react';
 import { useStyles } from './HeaderStyles';
 import SidenavData from './SidenavData';
 
